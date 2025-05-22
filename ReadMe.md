@@ -4,8 +4,7 @@ This project provides an end-to-end pipeline to **scrape, parse, transform, and 
 
 1. Downloading HTML pages for each property.
 2. Extracting structured data from those HTMLs.
-3. Mapping extracted data into a structured knowledge graph schema.
-4. Uploading the final output to AWS S3.
+3. Mapping extracted data into lexicon
 
 ---
 
