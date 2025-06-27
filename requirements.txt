@@ -1,0 +1,7 @@
+requests==2.32.3
+backoff==2.2.1
+tqdm==4.67.1
+pandas==2.2.3
+beautifulsoup4==4.13.3
+playwright==1.52.0
+
