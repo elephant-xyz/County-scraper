@@ -7,5 +7,5 @@ This project provides an end-to-end pipeline to **scrape, parse, transform, and 
 3. Mapping extracted data into lexicon
 
 ---
+ALso, Dowanloading and scrapping property information for Broward county thorugh download_broward_properties_info.py
 
-## 📂 Project Structure
