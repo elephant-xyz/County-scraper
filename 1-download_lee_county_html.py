@@ -1,16 +1,11 @@
 import requests
-from bs4 import BeautifulSoup
 import json
 import os
-import boto3
 import backoff
-import re
 import time
-import io
 from tqdm import tqdm
 import pandas as pd
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from botocore.exceptions import ProfileNotFound
 
 
 class AccessDeniedRetryable(requests.exceptions.RequestException):
@@ -38,9 +33,10 @@ def scrape_full_parcel(url, folio_id=None):
         raise AccessDeniedRetryable("Access Denied")
 
     html_content = response.content
+    os.makedirs("lee_output", exist_ok=True)
 
     # save locally
-    html_file_path = os.path.join("test_770", f"{folio_id}.html")
+    html_file_path = os.path.join("lee_output", f"{folio_id}.html")
     with open(html_file_path, "wb") as f:
         f.write(html_content)
 
@@ -74,7 +70,7 @@ def download_html_data(folio_ids, max_threads=10):
 if __name__ == '__main__':
 
     start_time = time.time()
-    df = pd.read_csv("../data/test.csv", dtype=str)
+    df = pd.read_csv("lee_input.csv", dtype=str)
     df["FolioID"] = df["FolioID"].astype(str)
     df.set_index("FolioID", inplace=True)
     folio_ids = df.index.tolist()
