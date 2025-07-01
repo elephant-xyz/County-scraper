@@ -82,7 +82,7 @@ These examples demonstrate how to construct targeted extractors tailored to each
 - Property Images (if available)
 
 > ✅ **Use the Lexicon Schema** as your reference. All fields should map to this schema.
-[Lexicon Schema](https://entity.exchange-prod.staircaseapi.com/lexicon)
+[Lexicon Schema](https://lexicon.elephant.xyz/)
 
 ---
 
